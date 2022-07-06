@@ -1,0 +1,28 @@
+{
+    "manifest_version":3,
+     "name":"Custom Background",
+     "version":"1.0",
+     "description":"tutorial extension",
+     "icons":{
+         "128":"background.png"
+     },
+     "action":{
+        "default_popup":"popup.html",
+        "default_icon":"background.png",
+        "default_title":"Custom Background"
+     },
+     "background":{
+            "service_worker":
+                "eventPage.js"     
+     },
+     "content_scripts":[
+          {
+            "matches":["https://www.google.com/"],
+            "js":["jquery.min.js","content.js"]
+          }
+     ],
+     "permissions":[
+        "tabs",
+        "storage"
+     ]
+}
